@@ -64,6 +64,13 @@ registerMicroApps(
       loader,
       activeRule: '/vue3',
     },
+    {
+      name: 'reactDemo',
+      entry: 'http://local.zhihu.com:3099/ios-keyboard/test-page-img',
+      container: '#subapp-viewport',
+      loader,
+      activeRule: '/ios-keyboard/test-page-img',
+    },
   ],
   {
     beforeLoad: [
