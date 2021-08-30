@@ -1,5 +1,5 @@
 import 'zone.js'; // for angular subapp
-import { registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start, initGlobalState } from '../../es';
+import { registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start, initGlobalState,loadMicroApp } from '../../es';
 import './index.less';
 
 /**
@@ -65,8 +65,8 @@ registerMicroApps(
       activeRule: '/vue3',
     },
     {
-      name: 'reactDemo',
-      entry: 'http://local.zhihu.com:3099/ios-keyboard/test-page-img',
+      name: 'react-ssr-ch',
+      entry: 'http://localhost:8080/ios-keyboard/test-page-img',
       container: '#subapp-viewport',
       loader,
       activeRule: '/ios-keyboard/test-page-img',
@@ -90,6 +90,18 @@ registerMicroApps(
     ],
   },
 );
+
+// const microApp = loadMicroApp({
+//   name: 'microApp',
+//   entry:{
+//     html:'<h1>这是一个微应用</h1>',
+//     scripts:[],
+//     styles:[]
+//   },
+//   // entry: '//localhost:7100',
+//   container: '#subapp-mic',
+// })
+
 
 const { onGlobalStateChange, setGlobalState } = initGlobalState({
   user: 'qiankun',
