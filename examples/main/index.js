@@ -66,11 +66,18 @@ registerMicroApps(
     },
     {
       name: 'react-ssr-ch',
-      entry: 'http://localhost:8080/ios-keyboard/test-page-img',
+      entry: 'http://localhost:8080/zhihu-demo',
       container: '#subapp-viewport',
       loader,
-      activeRule: '/ios-keyboard/test-page-img',
+      activeRule: '/zhihu-demo',
     },
+    // {
+    //   name: 'react-ssr-ch',
+    //   entry: 'http://localhost:8080/zhihu-header',
+    //   container: '#header',
+    //   loader,
+    //   activeRule: () => true,
+    // },
   ],
   {
     beforeLoad: [
@@ -124,7 +131,9 @@ setDefaultMountApp('/react16');
 /**
  * Step4 启动应用
  */
-start();
+start(
+  { strictStyleIsolation: true }
+);
 
 runAfterFirstMounted(() => {
   console.log('[MainApp] first app mounted');
