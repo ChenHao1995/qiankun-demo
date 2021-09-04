@@ -1,4 +1,4 @@
-import 'zone.js'; // for angular subapp
+// import 'zone.js'; // for angular subapp
 import { registerMicroApps, runAfterFirstMounted, setDefaultMountApp, start, initGlobalState,loadMicroApp } from '../../es';
 import './index.less';
 
@@ -132,7 +132,7 @@ setDefaultMountApp('/react16');
  * Step4 启动应用
  */
 start(
-  { strictStyleIsolation: true }
+  { sandbox : {strictStyleIsolation:true} }
 );
 
 runAfterFirstMounted(() => {
