@@ -1,5 +1,5 @@
 const render = $ => {
-  $('#purehtml-container').html('Hello, render with jQuery');
+  $('#purehtml-container').html('Hello, render with jQuery')
   return Promise.resolve();
 };
 
@@ -9,8 +9,12 @@ const render = $ => {
       console.log('purehtml bootstrap');
       return Promise.resolve();
     },
-    mount: () => {
-      console.log('purehtml mount');
+    mount: (props) => {
+      console.log(props,'purehtml mount----------');
+      // props.onGlobalStateChange((value, prev) => {
+      //   console.log('value----------------')
+      //   document.getElementById('pure-children').innerHTML = value.childrenName
+      // });
       return render($);
     },
     unmount: () => {
