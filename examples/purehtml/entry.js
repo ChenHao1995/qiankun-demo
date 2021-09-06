@@ -11,10 +11,10 @@ const render = $ => {
     },
     mount: (props) => {
       console.log(props,'purehtml mount----------');
-      // props.onGlobalStateChange((value, prev) => {
-      //   console.log('value----------------')
-      //   document.getElementById('pure-children').innerHTML = value.childrenName
-      // });
+      props.onGlobalStateChange((value, prev) => {
+        console.log('-------value---------')
+        $('#purehtml-container').html('Hello, render with jQuery')
+      });
       return render($);
     },
     unmount: () => {

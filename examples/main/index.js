@@ -53,9 +53,9 @@ registerMicroApps(
     {
       name: 'purehtml',
       entry: '//localhost:7104',
-      container: '#subapp-viewport',
+      container: '#purehtml',
       loader,
-      activeRule: '/purehtml',
+      activeRule: () => true,
     },
     {
       name: 'vue3',
@@ -136,7 +136,7 @@ setDefaultMountApp('/react16');
  * Step4 启动应用
  */
 start(
-  { sandbox : {strictStyleIsolation:true} }
+  { sandbox : {strictStyleIsolation:true},singular:false }
 );
 
 runAfterFirstMounted(() => {
